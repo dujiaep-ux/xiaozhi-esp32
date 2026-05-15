@@ -273,6 +273,7 @@ void NasMonitorUI::Show() {
     if (!nas_screen) return;
 
     s_screen_visible = true;
+    // Load the NAS screen but keep it transparent initially
     lv_scr_load(nas_screen);
 
     // Start update timer (every 5 seconds)
