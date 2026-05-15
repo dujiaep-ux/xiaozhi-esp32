@@ -9,6 +9,7 @@
 #include "mcp_server.h"
 #include "assets.h"
 #include "settings.h"
+#include "nas_monitor.h"
 
 #include <cstring>
 #include <esp_log.h>
@@ -67,6 +68,9 @@ void Application::Initialize() {
     display->SetupUI();
     // Print board name/version info
     display->SetChatMessage("system", SystemInfo::GetUserAgent().c_str());
+
+    // Initialize NAS monitor UI
+    NasMonitorUI::Init();
 
     // Setup the audio service
     auto codec = board.GetAudioCodec();
