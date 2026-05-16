@@ -70,13 +70,13 @@ void NasMonitorUI::Init() {
     lv_obj_t* title = lv_label_create(nas_screen);
     lv_obj_set_pos(title, 10, 8);
     lv_label_set_text(title, "NAS MONITOR");
-    lv_obj_set_style_text_font(title, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(title, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_color(title, lv_color_make(80, 80, 80), 0);
 
     // Clock
     clock_label = lv_label_create(nas_screen);
     lv_obj_set_pos(clock_label, 300, 8);
-    lv_obj_set_style_text_font(clock_label, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(clock_label, &lv_font_montserrat_14, 0);
     lv_label_set_text(clock_label, "--:--");
 
     // Divider line
@@ -94,7 +94,7 @@ void NasMonitorUI::Init() {
     lv_obj_set_pos(cpu_title, 70, 55);
     lv_obj_set_size(cpu_title, 60, 16);
     lv_label_set_text(cpu_title, "CPU");
-    lv_obj_set_style_text_font(cpu_title, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(cpu_title, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_align(cpu_title, LV_TEXT_ALIGN_CENTER, 0);
 
     // Memory ring (right)
@@ -105,7 +105,7 @@ void NasMonitorUI::Init() {
     lv_obj_set_pos(mem_title, 270, 55);
     lv_obj_set_size(mem_title, 60, 16);
     lv_label_set_text(mem_title, "MEM");
-    lv_obj_set_style_text_font(mem_title, &lv_font_montserrat_12, 0);
+    lv_obj_set_style_text_font(mem_title, &lv_font_montserrat_14, 0);
     lv_obj_set_style_text_align(mem_title, LV_TEXT_ALIGN_CENTER, 0);
 
     // Vertical divider
@@ -119,7 +119,7 @@ void NasMonitorUI::Init() {
     lv_obj_t* temp_title = lv_label_create(nas_screen);
     lv_obj_set_pos(temp_title, 10, 145);
     lv_label_set_text(temp_title, "TEMP");
-    lv_obj_set_style_text_font(temp_title, &lv_font_montserrat_10, 0);
+    lv_obj_set_style_text_font(temp_title, &lv_font_montserrat_14, 0);
 
     // Temperature bar background
     lv_obj_t* temp_bg = lv_bar_create(nas_screen);
@@ -133,7 +133,7 @@ void NasMonitorUI::Init() {
     temp_label = lv_label_create(nas_screen);
     lv_obj_set_pos(temp_label, 295, 145);
     lv_label_set_text(temp_label, "--C");
-    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_10, 0);
+    lv_obj_set_style_text_font(temp_label, &lv_font_montserrat_14, 0);
 
     // Divider line 2
     lv_obj_t* line2 = lv_line_create(nas_screen);
@@ -145,7 +145,7 @@ void NasMonitorUI::Init() {
     lv_obj_t* disk_title = lv_label_create(nas_screen);
     lv_obj_set_pos(disk_title, 10, 175);
     lv_label_set_text(disk_title, "DISK USAGE");
-    lv_obj_set_style_text_font(disk_title, &lv_font_montserrat_10, 0);
+    lv_obj_set_style_text_font(disk_title, &lv_font_montserrat_14, 0);
 
     // Divider line 3
     lv_obj_t* line3 = lv_line_create(nas_screen);
@@ -162,7 +162,7 @@ void NasMonitorUI::Init() {
         lv_obj_set_pos(disk_label[i], 10, row_y);
         lv_obj_set_size(disk_label[i], 50, 14);
         lv_label_set_text(disk_label[i], "Disk");
-        lv_obj_set_style_text_font(disk_label[i], &lv_font_montserrat_10, 0);
+        lv_obj_set_style_text_font(disk_label[i], &lv_font_montserrat_14, 0);
 
         // Progress bar background
         lv_obj_t* bar_bg = lv_bar_create(nas_screen);
@@ -179,7 +179,7 @@ void NasMonitorUI::Init() {
         lv_obj_set_pos(disk_pct_label[i], 290, row_y);
         lv_obj_set_size(disk_pct_label[i], 40, 14);
         lv_label_set_text(disk_pct_label[i], "--%");
-        lv_obj_set_style_text_font(disk_pct_label[i], &lv_font_montserrat_10, 0);
+        lv_obj_set_style_text_font(disk_pct_label[i], &lv_font_montserrat_14, 0);
     }
 
     // Bottom line
@@ -192,7 +192,7 @@ void NasMonitorUI::Init() {
     uptime_label = lv_label_create(nas_screen);
     lv_obj_set_pos(uptime_label, 10, 280);
     lv_label_set_text(uptime_label, "UP: --");
-    lv_obj_set_style_text_font(uptime_label, &lv_font_montserrat_10, 0);
+    lv_obj_set_style_text_font(uptime_label, &lv_font_montserrat_14, 0);
 
     ESP_LOGI(TAG, "NAS Monitor UI initialized");
 }
