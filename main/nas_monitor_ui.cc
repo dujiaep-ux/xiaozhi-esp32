@@ -2,6 +2,7 @@
 #include "lvgl.h"
 #include "esp_timer.h"
 #include "esp_log.h"
+#include <ctime>
 
 static const char* TAG = "NasMonitorUI";
 
