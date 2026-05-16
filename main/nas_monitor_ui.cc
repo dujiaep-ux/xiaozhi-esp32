@@ -11,7 +11,6 @@ static lv_obj_t* cpu_arc = nullptr;
 static lv_obj_t* mem_arc = nullptr;
 static lv_obj_t* cpu_label = nullptr;
 static lv_obj_t* mem_label = nullptr;
-static lv_obj_t* temp_bar = nullptr;
 static lv_obj_t* temp_label = nullptr;
 static lv_obj_t* uptime_label = nullptr;
 static lv_obj_t* clock_label = nullptr;
@@ -82,7 +81,7 @@ void NasMonitorUI::Init() {
 
     // Divider line
     lv_obj_t* line1 = lv_line_create(nas_screen);
-    static lv_point_t points[] = {{10, 28}, {390, 28}};
+    static lv_point_precise_t points[] = {{10, 28}, {390, 28}};
     lv_line_set_points(line1, points, 2);
     lv_obj_set_style_line_color(line1, lv_color_make(180, 180, 180), 0);
     lv_obj_set_style_line_width(line1, 1, 0);
@@ -111,7 +110,7 @@ void NasMonitorUI::Init() {
 
     // Vertical divider
     lv_obj_t* vline = lv_line_create(nas_screen);
-    static lv_point_t vpoints[] = {{200, 40}, {200, 130}};
+    static lv_point_precise_t vpoints[] = {{200, 40}, {200, 130}};
     lv_line_set_points(vline, vpoints, 2);
     lv_obj_set_style_line_color(vline, lv_color_make(200, 200, 200), 0);
     lv_obj_set_style_line_width(vline, 1, 0);
@@ -138,7 +137,7 @@ void NasMonitorUI::Init() {
 
     // Divider line 2
     lv_obj_t* line2 = lv_line_create(nas_screen);
-    static lv_point_t points2[] = {{10, 168}, {390, 168}};
+    static lv_point_precise_t points2[] = {{10, 168}, {390, 168}};
     lv_line_set_points(line2, points2, 2);
     lv_obj_set_style_line_color(line2, lv_color_make(180, 180, 180), 0);
 
@@ -150,7 +149,7 @@ void NasMonitorUI::Init() {
 
     // Divider line 3
     lv_obj_t* line3 = lv_line_create(nas_screen);
-    static lv_point_t points3[] = {{10, 190}, {390, 190}};
+    static lv_point_precise_t points3[] = {{10, 190}, {390, 190}};
     lv_line_set_points(line3, points3, 2);
     lv_obj_set_style_line_color(line3, lv_color_make(200, 200, 200), 0);
 
@@ -185,7 +184,7 @@ void NasMonitorUI::Init() {
 
     // Bottom line
     lv_obj_t* line4 = lv_line_create(nas_screen);
-    static lv_point_t points4[] = {{10, 295}, {390, 295}};
+    static lv_point_precise_t points4[] = {{10, 295}, {390, 295}};
     lv_line_set_points(line4, points4, 2);
     lv_obj_set_style_line_color(line4, lv_color_make(180, 180, 180), 0);
 
@@ -193,7 +192,7 @@ void NasMonitorUI::Init() {
     uptime_label = lv_label_create(nas_screen);
     lv_obj_set_pos(uptime_label, 10, 280);
     lv_label_set_text(uptime_label, "UP: --");
-    lv_obj_set_style_text_font(uptime_label, &lv_font_montserrat_9, 0);
+    lv_obj_set_style_text_font(uptime_label, &lv_font_montserrat_10, 0);
 
     ESP_LOGI(TAG, "NAS Monitor UI initialized");
 }
