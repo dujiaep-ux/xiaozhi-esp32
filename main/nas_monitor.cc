@@ -51,13 +51,16 @@ static esp_err_t http_event_handler(esp_http_client_event_t *evt) {
 
     switch(evt->event_id) {
         case HTTP_EVENT_ON_DATA:
-            if (evt->user_data && !evt->error) {
+            if (evt->user_data) {
                 char** buf = (char**)evt->user_data;
-                *buf = (char*)realloc(*buf, response_len + evt->data_len + 1);
-                memcpy(*buf + response_len, evt->data, evt->data_len);
+                response_data = (char*)realloc(response_data, response_len + evt->data_len + 1);
+                memcpy(response_data + response_len, evt->data, evt->data_len);
                 response_len += evt->data_len;
-                (*buf)[response_len] = 0;
+                response_data[response_len] = 0;
             }
+            break;
+        case HTTP_EVENT_ON_ERROR:
+            ESP_LOGW(TAG, "HTTP error event");
             break;
         default:
             break;
@@ -67,7 +70,6 @@ static esp_err_t http_event_handler(esp_http_client_event_t *evt) {
 
 void NasMonitor::FetchStatus() {
     char* response = nullptr;
-    int response_len = 0;
 
     char url[128];
     snprintf(url, sizeof(url), "http://%s:%d/api/status", NAS_API_HOST, NAS_API_PORT);
